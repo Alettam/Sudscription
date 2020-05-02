@@ -5,32 +5,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText editViewLogin;
+    EditText editViewEmail;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textView = findViewById(R.id.textView5);
+        editViewLogin = findViewById(R.id.LabelForLogin);
+        editViewEmail = findViewById(R.id.LabelForEmail);
+
 
     }
 
     public void onClick(View view) {
-        TextView textView = findViewById(R.id.textView5);
-        TextView textViewLogin = findViewById(R.id.LabelForLogin);
-        TextView textViewEmail = findViewById(R.id.LabelForEmail);
-        textView.setText("Подписка на рассылку успешно оформлена для пользователя " + textViewLogin.getText() +
-                " на электронный адрес " + textViewEmail.getText());
+        textView.setText("Подписка на рассылку успешно оформлена для пользователя " + editViewLogin.getText().toString() +
+                " на электронный адрес " + editViewEmail.getText().toString());
         textView.setVisibility(1);
     }
 
     public void clean(View view) {
-        TextView textViewLogin = findViewById(R.id.LabelForLogin);
-        textViewLogin.setText("");
-        TextView textViewEmail = findViewById(R.id.LabelForEmail);
-        textViewEmail.setText("");
+        editViewLogin.getText().clear();
+        editViewEmail.getText().clear();
 
 
     }
