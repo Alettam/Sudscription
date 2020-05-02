@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Подсписка</string>
+    <string name="login">Имя пользователя</string>
+    <string name="email">Электронная почта</string>
+    <string name="clean">Очистить</string>
+</resources>
